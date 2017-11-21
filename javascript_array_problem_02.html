@@ -3,7 +3,24 @@
 <head>
     <script type="text/javascript">
         function check_string() {
-          // TODO : 여기에 여러분이 직접 코딩을 해주세요.          
+          // TODO : 여기에 여러분이 직접 코딩을 해주세요. 
+	function check_string(s) {
+        	var s_arr =[];
+		for (var i = 0; i < s.length; i++){
+    			if(s[i]=="("){
+     				s_arr.push(s[i]);
+   			}
+ 
+    			else if(s[i]==")") {
+      				if(s_arr.length==0){
+       					return false;
+      				}
+      				s_arr.pop();
+    			}
+  		}
+		if(s_arr.length!=0){
+    			return false;
+  		}
           return true;
         }
 
